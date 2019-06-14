@@ -1,0 +1,29 @@
+-
+    var projectTools = [{
+        width: '68px',
+        height: '70px',
+        href: '#calendar',
+        title: 'Title goes here',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        }, {
+        width: '80px',
+        height: '80px',
+        href: '#employee',
+        title: 'Title goes here',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        }, {
+        width: '90px',
+        height: '80px',
+        href: '#worker',
+        title: 'Title goes here',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        }];
+
+mixin tool
+    each item in projectTools
+        .layout_col-3.tool
+                .tool_content
+                    svg.tool_img(width=item.width height=item.height)
+                         use(xlink:href=item.href)
+                    h4.h4.tool_title= item.title
+                    p.p.p__faded= item.text

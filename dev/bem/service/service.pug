@@ -1,0 +1,63 @@
+-
+    var serviceOffers = [{
+        width: '22px',
+        height: '16px',
+        href: '#profit',
+        title: 'statistics',
+        img: 'img/service.jpg',
+        p1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
+
+        p2: 'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in'
+        },{
+        width: '21px',
+        height: '18px',
+        href: '#envelope',
+        title: 'inbox',
+        img: 'img/service.jpg',
+        p1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
+
+        p2: 'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in'
+        },{
+        width: '26px',
+        height: '18px',
+        href: '#group',
+        title: 'team',
+        img: 'img/service.jpg',
+        p1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
+
+        p2: 'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in'
+        },{
+        width: '16px',
+        height: '18px',
+        href: '#gear',
+        title: 'settings',
+        img: 'img/service.jpg',
+        p1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
+
+        p2: 'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in'
+        },{
+        width: '18px',
+        height: '14px',
+        href: '#rss',
+        title: 'feed',
+        img: 'img/service.jpg',
+        p1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,',
+
+        p2: 'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in'
+        }];
+
+mixin service
+    each item in serviceOffers
+        .service
+            .service_title
+                svg.service_icon(width=item.width height=item.height)
+                    use(xlink:href=item.href)
+                p.p= item.title
+            .service_content
+                img.service_img(src=item.img alt="")
+                .service_text
+                    p.p.service_p= item.p1
+                    p.p.service_p= item.p2
+
+
+

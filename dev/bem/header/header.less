@@ -1,0 +1,283 @@
+
+.header {
+    background-image: url(../img/wallpaper.jpg);
+    background-size: cover;
+    height: 100vh;
+    color: @colorTextDefault;
+    position: relative;
+    @media @desktop {
+        height: auto;
+    }
+    &:after {
+        content: '';
+        background-image: linear-gradient(45deg, @gradientColor1, @gradientColor2);
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        opacity: .9;
+    }
+    &_container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        @media @tablet {
+            flex-wrap: wrap;
+        }
+    }
+    &_top {
+        display: flex;
+        align-items: center;
+        padding: 50px 0 0;
+        justify-content: space-between;
+        width: 100%;
+        position: relative;
+        @media @tablet {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    &_menu {
+        display: none;
+        fill: @colorTextDefault;
+        &:hover {
+            fill: @colorTextInverse;
+            transition: all .3s ease-in-out;
+        }
+        @media @mobile {
+            display: flex;
+            margin-bottom: 10px;
+            position: absolute;
+            top: 55px;
+            left: calc(50% - 25px / 2);
+        }
+    }
+    &_logo {
+        display: inline-flex;
+        align-items: center;
+        fill: @colorTextDefault;
+        transition: all .3s ease;
+        &:hover {
+            color: @colorTextInverse;
+            fill: @colorTextInverse;
+            transition: all .3s ease-in-out;
+        }
+        @media @tablet {
+            width: 100%;
+        }
+    }
+    &_img {
+        margin-right: 10px;
+        @media @mobile {
+            margin: 0;
+        }
+    }
+    &_name {
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        @media @desktop {
+            display: none;
+        }
+        @media @tablet {
+            display: flex;
+        }
+        @media @mobile {
+            display: none;
+        }
+    }
+    &_subtitle {
+        font-weight: 700;
+        white-space: nowrap;
+    }
+    &_nav {
+        display: inline-flex;
+        align-content: stretch;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        @media @tablet {
+            width: 100%;
+            margin-top: @layoutGutter;
+        }
+        @media @mobile {
+            max-height: 0;
+            overflow: hidden;
+        }
+        &__enabled {
+            @media @mobile {
+                max-height: 1000px;
+                transition: max-height 1s ease;
+                flex-flow: column;
+                align-items: center;
+                margin-top: @layoutGutter;
+            }
+        }
+    }
+    &_nav-menu {
+        display: flex;
+        justify-content: space-between;
+        @media @tablet {
+            width: 100%;
+        }
+        @media @mobile{
+            flex-flow: column;
+        }
+    }
+    &_nav-item {
+        display: block;
+        align-items: center;
+        padding: 0 25px;
+        &__active {
+            color: #061e37;
+        }
+        @media @tablet {
+            margin: @layoutGutter 0;
+            padding: 0;
+        }
+        @media @mobile {
+            margin: @layoutGutter / 2 0;
+            text-align: center;
+        }
+    }
+    &_signup {
+        border: 1px solid currentColor;
+        font-size: 14px;
+        padding: 5px 20px;
+        border-radius: 2px;
+        white-space: nowrap;
+        @media @tablet {
+            position: absolute;
+            top: 53px;
+            right: 0;
+        }
+    }
+    &_nav-item,
+    &_signup {
+        transition: all .3s ease;
+        &:hover {
+            color: @colorTextInverse;
+            fill: @colorTextInverse;
+            transition: all .3s ease-in-out;
+        }
+    }
+    &_main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto 0;
+        @media @desktop {
+            flex-wrap: wrap;
+        }
+    }
+    &_article {
+        max-width: 580px;
+        margin-right: 40px;
+        @media @desktop {
+            max-width: 100%;
+            text-align: center;
+            margin: @layoutGutter * 4 0 0;
+        }
+        @media @mobile {
+            margin-top: @layoutGutter * 2;
+        }
+    }
+    &_text {
+        margin-bottom: 30px;
+    }
+    &_button {
+        @media @tablet {
+            width: 50%;
+        }
+        &:not(:last-of-type) {
+            margin-right: 30px;
+            @media @tablet {
+                margin: 0;
+            }
+        }
+        @media @mobile {
+            width: 100%;
+        }
+    }
+    &_video {
+        display: flex;
+        border: 1px solid @colorTextInverse;
+        border-radius: 3px;
+        position: relative;
+        overflow: hidden;
+        transition: all .3s ease;
+        cursor: pointer;
+        @media @desktop {
+            width: 100%;
+            margin: @layoutGutter * 2 0 @layoutGutter * 4;
+        }
+        &:hover &-button {
+            background-color: @bgColorButtonAccent;
+            transition: all .3s ease-in-out;
+            .box-shadow(@shadowColorHover);
+            &:after {
+                color: @bgColorButtonAccent;
+                transition: all .3s ease-in-out;
+            }
+        }
+    }
+    &_video-poster {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        &:before {
+            content: '';
+            background-image: url(../img/video.jpg);
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &_video-button {
+        padding: 25px;
+        background-color: @bgColorButtonInverse;
+        border-radius: inherit;
+        position: absolute;
+        top: calc(50% - 30px);
+        left: calc(50% - 30px);
+        z-index: 3;
+        fill: @bgColorButton;
+        display: flex;
+        .box-shadow(@shadowColor);
+        transition: all .3s ease;
+        &:after {
+            content: 'watch the video';
+            position: absolute;
+            bottom: -60%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            text-transform: uppercase;
+            font-family: @fontB;
+            color: @colorTextInverse;
+            white-space: nowrap;
+            transition: all .3s ease;
+        }
+    }
+    &_video-frame {
+        width: 600px;
+        height: 320px;
+        @media @desktop {
+            width: 100%;
+        }
+        @media @mobile {
+            height: 75%;
+        }
+    }
+}

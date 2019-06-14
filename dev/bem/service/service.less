@@ -1,0 +1,76 @@
+.service {
+    display: inline-flex;
+    flex-flow: column;
+    border-radius: 4px;
+    padding: 25px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    .box-shadow(@shadowColor);
+    transition: box-shadow .45s ease;
+    @media @tablet {
+        width: 100%;
+    }
+    &:hover {
+        .box-shadow(@shadowColorHover);
+        transition: box-shadow .45s ease-in-out;
+    }
+    &:last-of-type {
+        margin-bottom: 90px;
+    }
+    &_title {
+        font-weight: 600;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        &:after {
+            content: url('../img/arrow.svg');
+            position: absolute;
+            top: 7px;
+            right: 0;
+        }
+    }
+    &_content {
+        display: flex;
+        max-height: 0;
+        transition: max-height .45s;
+        overflow: hidden;
+        &__enabled {
+            max-height: 1000px;
+            transition: max-height .45s;
+        }
+        @media @tablet {
+            flex-wrap: wrap;
+        }
+    }
+    &_img {
+        width: 250px;
+        height: 155px;
+        border-radius: 4px;
+        margin-right: 25px;
+        margin-top: 15px;
+        @media @tablet {
+            margin: @layoutGutter / 2 auto 0;
+        }
+        @media @mobile {
+            width: 100%;
+            margin-top: @layoutGutter;
+        }
+    }
+    &_text {
+        text-align: left;
+        margin-top: 15px;
+    }
+    &_p {
+        line-height: 1.7em;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+    &_icon {
+        margin-right: 25px;
+    }
+}

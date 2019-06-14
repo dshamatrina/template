@@ -1,0 +1,32 @@
+.tool {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 @layoutGutter;
+    &:nth-child(1) {
+        fill: @bgColorPurple;
+    }
+    &:nth-child(2) {
+        fill: @bgColorBabyBlue;
+    }
+    &:nth-child(3) {
+        fill: @bgColorPink;
+    }
+    &_content {
+        max-width: 345px;
+    }
+    &_title {
+        margin-bottom: 15px;
+    }
+    &_img {
+        margin-bottom: 40px;
+    }
+    &_button {
+        align-self: center;
+        margin: 75px 0 100px;
+        @media @desktop {
+            margin: @layoutGutter * 2 0 @layoutGutter * 3;
+        }
+    }
+}

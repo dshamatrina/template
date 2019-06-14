@@ -1,0 +1,38 @@
+-
+    var achievementRecords = [{
+        width: '26px',
+        height: '23px',
+        href: '#buildings',
+        number: '12000+',
+        item: 'business',
+        }, {
+        width: '18px',
+        height: '22px',
+        href: '#download',
+        number: '60000+',
+        item: 'downloads',
+        }, {
+        width: '20px',
+        height: '20px',
+        href: '#user',
+        number: '30000+',
+        item: 'free installs',
+        }, {
+        width: '18px',
+        height: '22px',
+        href: '#download',
+        number: '40000+',
+        item: 'pro users',
+        }];
+
+
+mixin achievement
+    each item in achievementRecords
+        .layout_col-4.achievement
+            .achievement_content
+                .achievement_img-frame
+                    svg.achievement_img(width=item.width height=item.height)
+                        use(xlink:href=item.href)
+                h4.h4= item.number
+                    br
+                    =item.item

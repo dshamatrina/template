@@ -1,0 +1,38 @@
+.button {
+    padding: 20px 25px;
+    background-color: @bgColorButton;
+    color: @colorTextInverse;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+    .box-shadow(@shadowColor);
+    transition: box-shadow .3s ease;
+    &:hover {
+        .box-shadow(@shadowColorHover);
+        background-color: darken(@bgColorButton, 10%);
+        transition: all .3s ease-in-out;
+    }
+    &__inverse {
+        padding: 20px 40px;
+        background-color: @bgColorButtonInverse;
+        color: @colorTextDefault;
+        font-family: @fontA;
+        font-weight: 400;
+        &:hover {
+            background-color: lighten(@bgColorButtonInverse, 10%);
+            transition: all .3s ease-in-out;
+        }
+    }
+    &__accent {
+        background: @bgColorButtonAccent;
+        color: @colorTextDefault;
+        &:hover {
+            background: linear-gradient(90deg, @bgColorButtonAccent 40%, @bgColorPurple, @bgColorBabyBlue, @bgColorPink);
+            background-size: 400% 400%;
+            animation: Gradient 4s ease infinite;
+        }
+        .keyframes(Gradient);
+    }
+}

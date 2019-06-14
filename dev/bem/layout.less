@@ -1,0 +1,57 @@
+/**
+ * Layout bem block
+ *
+ * The only block that has no markup
+ *   and is allowed to mix with other blocks
+ *   as is an layout essence
+ */
+
+ .layout {
+    width: 100%;
+    &_section {
+        max-width: @layoutWidth;
+        padding: 0 @layoutPadding;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-flow: column;
+        @media @mobile {
+            padding: 0 @layoutPadding / 2;
+        }
+    }
+    &_title {
+        max-width: 590px;
+        text-align: center;
+        margin: 100px auto 90px;
+        @media @desktop {
+            margin: @layoutGutter * 3 auto @layoutGutter * 2;
+        }
+    }
+    &_row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media @desktop {
+            flex-wrap: wrap;
+        }
+    }
+    &_col-3 {
+        width: calc(100% / 3);
+        @media @tablet {
+            width: 100%;
+            &:not(:last-child) {
+                margin-bottom: @layoutGutter;
+            }
+        }
+    }
+    &_col-4 {
+        width: calc(100% / 4);
+        @media @desktop {
+            width: 50%;
+        }
+        @media @mobile {
+            width: 100%;
+        }
+    }
+}

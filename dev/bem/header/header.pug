@@ -1,0 +1,30 @@
+mixin header
+    header.header.layout
+        .header_container.layout_section
+            .header_top
+                a.header_logo(href="#")
+                    svg.header_img(width="30px" height="30px")
+                        use(xlink:href="#logo")
+                    .header_name
+                        .header_title Dart
+                        .header_subtitle Service Manager
+                a.header_menu(href="#")
+                    svg.header_img(width="25px" height="25px")
+                        use(xlink:href="#menu")
+                nav.header_nav
+                    .header_nav-menu
+                        each navItem in ['Home', 'Service', 'Extension', 'Pricing', 'Help']
+                            a.header_nav-item(href="#")= navItem
+                a.header_signup(href="#") sign up
+            .header_main
+                .header_article
+                    h1.h1 Lorem ipsum dolor sit amet
+                    h5.h5.header_text  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamc
+                    a.button.button__inverse.header_button Buy Now
+                    a.button.header_button Try for free
+                .header_video
+                    .header_video-poster
+                        .header_video-button
+                            svg.header_video-icon(width="10px" height="10px")
+                                use(xlink:href="#play")
+                    iframe.header_video-frame(width="" height="" src="https://www.youtube.com/embed/Q5763pPchvw?showinfo=0&controls=0&autohide=1&modestbranding=1&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)

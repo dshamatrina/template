@@ -1,0 +1,41 @@
+.achievement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 45px 0;
+    color: @colorTextDefault;
+    &:nth-child(1) {
+        background-color: @bgColorBabyBlue;
+        fill: @bgColorBabyBlue;
+    }
+    &:nth-child(2) {
+        background-color: @bgColorBlue;
+        fill: @bgColorBlue;
+    }
+    &:nth-child(3) {
+        background-color: @bgColorPurple;
+        fill: @bgColorPurple;
+    }
+    &:nth-child(4) {
+        background-color: @bgColorPink;
+        fill: @bgColorPink;
+    }
+    &_content {
+        display: flex;
+        align-items: center;
+        min-width: 200px;
+        padding: 0 20px;
+        box-sizing: content-box;
+    }
+    &_img-frame {
+        border-radius: 50%;
+        background-color: @bgColorButton;
+        height: 62px;
+        width: 62px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+    }
+}
