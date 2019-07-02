@@ -24,6 +24,8 @@ document.querySelectorAll('.service_title').forEach((el, i) => {
     })
 });
 
+// burger menu
+
 document.querySelector('.header_menu').addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector('.header_nav').classList.toggle('header_nav__enabled');
